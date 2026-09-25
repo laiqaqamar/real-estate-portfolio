@@ -21,7 +21,7 @@ import dMarkaz from '../assets/images/blocks/Dmarkaz.png'
 
 import executiveBlock from '../assets/images/blocks/executive Block.png'
 
-import blockA from '../assets/images/blocks/A-block.png'
+import blockA from '../assets/images/blocks/A-Block.png'
 import blockAGallery from '../assets/images/properties/farm4.jpeg'
 
 import blockB from '../assets/images/blocks/B block.png'
