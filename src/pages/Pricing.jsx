@@ -43,7 +43,7 @@ export default function Pricing() {
         eyebrow="Pricing"
         title="Construction Cost Calculator"
         description="Get a quick, approximate estimate for your construction project."
-        image="/src/assets/images/pricing-hero.jpg"
+        image="/src/assets/images/services/architecture-hero-image.jpg"
         breadcrumb={[{ label: 'Pricing' }]}
       />
 

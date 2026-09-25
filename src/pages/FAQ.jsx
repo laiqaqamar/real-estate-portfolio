@@ -11,7 +11,7 @@ export default function FAQ() {
         eyebrow="Support"
         title="Frequently Asked Questions"
         description="Answers to common questions about buying, building and our process."
-        image="/src/assets/images/faq-hero.jpg"
+        image="/src/assets/images/services/interior-hero-image.jpg"
         breadcrumb={[{ label: 'FAQs' }]}
       />
 

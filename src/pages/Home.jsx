@@ -1,452 +1,1219 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Calculator, MapPin, MessageCircle, ShieldCheck, UserCircle } from 'lucide-react'
-import SmartImage from '../components/SmartImage'
-import HeroMedia from '../components/HeroMedia'
-import SectionHeading from '../components/SectionHeading'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  MapPin,
+  MessageCircle,
+  ShieldCheck,
+  UserCircle,
+  Play,
+} from 'lucide-react'
+
 import Button from '../components/Button'
 import ServiceCard from '../components/ServiceCard'
 import BlockCard from '../components/BlockCard'
 import PropertyCard from '../components/PropertyCard'
 import AnimatedCounter from '../components/AnimatedCounter'
+
 import { siteInfo, howWeWork } from '../data/siteData'
 import { services } from '../data/services'
-import { blockCategories, blocks } from '../data/blocks'
+import { blocks } from '../data/blocks'
 import { properties } from '../data/properties'
-import { getWhatsAppLink } from '../utils/whatsapp'
 
-// TODO: These are general, non-invented reasons drawn from information we
-// actually have (CEO name, location, WhatsApp-first contact). Edit freely
-// once you can share more specific reasons to choose Al Harmain Associates.
+
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
+
 const whyChooseUs = [
   {
     icon: MapPin,
-    title: 'Based in Gulberg Greens',
-    description: 'Local presence across D-Markaz, Gulberg Farmhouses and Gulberg Residencia.',
+    title: 'Prime Locations',
+    description:
+      'Strategic locations with high growth potential across Gulberg Greens.',
   },
   {
     icon: UserCircle,
-    title: 'Led by Raja Abdul Rafay',
-    description: 'Direct CEO oversight on every property, project and block.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'WhatsApp-First Communication',
-    description: 'Reach our team directly for inquiries, estimates and updates.',
+    title: 'Unmatched Quality',
+    description:
+      'Superior craftsmanship and attention to detail in every project.',
   },
   {
     icon: ShieldCheck,
-    title: 'Clear, Transparent Process',
-    description: 'A defined process from planning through handover on every project.',
+    title: 'End-to-End Expertise',
+    description:
+      'From design to handover, we manage the complete journey.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Trusted by Thousands',
+    description:
+      'A growing legacy of happy families and thriving communities.',
   },
 ]
 
+
 export default function Home() {
+
   const featuredBlocks = blocks.slice(0, 3)
-  const featuredProperties = properties.slice(0, 3)
+
+  const featuredProperties = properties.slice(0, 4)
+
 
   return (
-    <div>
-      {/* HERO */}
-<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-ink-950 text-center">
 
-  {/* HERO IMAGE */}
-  <img
-    src="/src/assets/videos/hero-image.webp"
-    alt={`${siteInfo.companyName} — Gulberg Greens, Islamabad`}
-    className="absolute inset-0 h-full w-full scale-110 object-cover object-center"
-  />
+    <div className="overflow-hidden bg-[#f6f4ee] text-ink-950">
 
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-ink-950/30" />
 
-  {/* HERO CONTENT */}
-  <div className="container-wide relative z-10 flex flex-col items-center pt-16">
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
-    <motion.span
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="rounded-full bg-ink-950/80 px-5 py-2 text-xs font-bold uppercase tracking-widest text-paper"
-    >
-      Welcome to {siteInfo.companyName}
-    </motion.span>
+      <section className="relative min-h-[82vh] overflow-hidden bg-[#091321]">
 
-    <motion.h1
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.1 }}
-      className="mt-6 max-w-7xl font-display text-5xl leading-[1.05] text-paper md:text-7xl"
-    >
-      Real Estate &amp; Construction.
-    </motion.h1>
-
-    <motion.p
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
-      className="mt-6 max-w-xl text-lg text-paper/80"
-    >
-      {siteInfo.companyName} plans, builds and delivers across Gulberg Greens, Islamabad.
-    </motion.p>
-
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.3 }}
-      className="mt-9 flex flex-wrap items-center justify-center gap-4"
-    >
-      <Link
-        to="/contact"
-        className="group flex items-center gap-4 rounded-full bg-ink-950 py-2 pl-6 pr-2 text-sm font-bold text-paper transition-colors hover:bg-ink-800"
-      >
-        Contact Us
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-paper text-ink-950 transition-transform group-hover:rotate-45">
-          <ArrowUpRight size={16} />
-        </span>
-      </Link>
-
-      <Link
-        to="/pricing"
-        className="group flex items-center gap-4 rounded-full bg-paper py-2 pl-6 pr-2 text-sm font-bold text-ink-950 transition-colors hover:bg-white"
-      >
-        Get Estimate
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink-950 text-paper">
-          <Calculator size={16} />
-        </span>
-      </Link>
-    </motion.div>
-
-  </div>
-</section>
-
-      {/* ABOUT */}
-      <section className="container-wide grid grid-cols-1 gap-12 py-24 md:grid-cols-2 md:items-center md:gap-16">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.6 }}
-          className="relative aspect-[4/5] overflow-hidden rounded-md"
-        >
-          <video
-  src="https://res.cloudinary.com/qrcvira2/video/upload/v1790271875/hero-video.mp4"
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="h-full w-full object-cover"
->
-  Your browser does not support the video tag.
-</video>
-        </motion.div>
-
-        <div className="flex flex-col gap-6">
-          <SectionHeading
-            eyebrow="About Us"
-            title={siteInfo.companyName}
-            description={siteInfo.shortDescription}
-          />
-          <p className="text-sm leading-relaxed text-slate-450">{siteInfo.vision}</p>
-
-          <div className="mt-4 grid grid-cols-2 gap-6 border-t border-ink-900/10 pt-8 sm:grid-cols-4">
-            {siteInfo.stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col gap-1">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                <span className="text-xs text-slate-450">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <Button to="/about" variant="dark" className="mt-2 w-fit">
-            More About Us
-          </Button>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="bg-ink-900 py-24">
-        <div className="container-wide">
-          <SectionHeading
-            eyebrow="What We Do"
-            title="End-to-end construction & design services"
-            description="From first sketch to final handover, our teams manage every stage of the build under one roof."
-            light
-            align="center"
-          />
-          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="container-wide py-24">
-        <SectionHeading eyebrow="Why Choose Us" title={`Why work with ${siteInfo.companyName}`} />
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {whyChooseUs.map((item) => (
-            <div key={item.title} className="flex flex-col gap-3 rounded-md bg-white p-6 shadow-sm ring-1 ring-ink-900/5">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-bronze-50 text-bronze-600">
-                <item.icon size={20} />
-              </span>
-              <h3 className="font-display text-lg text-ink-950">{item.title}</h3>
-              <p className="text-sm text-slate-450">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* CEO / LEADERSHIP */}
-<section className="container-wide py-24">
-
-  <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
-
-    {/* CEO IMAGE */}
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.7 }}
-      className="relative h-[500px] overflow-hidden rounded-2xl md:h-[600px]"
-    >
-      <img
-        src="/src/assets/images/ceo2.jpeg"
-        alt="Raja Abdul Rafay - CEO of Al Harmain Associates"
-        className="h-full w-full object-cover"
-      />
-
-      {/* Bottom gradient */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-950/70 to-transparent" />
-
-      {/* CEO name on image */}
-      <div className="absolute bottom-7 left-7">
-        <p className="text-xs font-bold uppercase tracking-widest text-paper/70">
-          Chief Executive Officer
-        </p>
-
-        <h3 className="mt-1 font-display text-3xl text-paper">
-          Raja Abdul Rafay
-        </h3>
-      </div>
-    </motion.div>
-
-    {/* CEO INFORMATION */}
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.7 }}
-      className="flex flex-col gap-6"
-    >
-
-      <div>
-        <div className="mb-4 flex items-center gap-3">
-          <span className="h-px w-8 bg-[#b88945]" />
-
-          <span className="text-sm font-medium text-[#b88945]">
-            Our Leadership
-          </span>
-        </div>
-
-        <h2 className="font-display text-4xl leading-tight text-ink-950 md:text-5xl">
-          Meet Our CEO
-        </h2>
-      </div>
-
-      <h3 className="font-display text-2xl text-ink-950">
-        Raja Abdul Rafay
-      </h3>
-
-      <p className="text-sm leading-relaxed text-slate-450">
-        As the Chief Executive Officer of Al Harmain Associates,
-        Raja Abdul Rafay leads the company with a focus on quality,
-        transparency and long-term value in real estate and
-        construction.
-      </p>
-
-      <p className="text-sm leading-relaxed text-slate-450">
-        His leadership is focused on delivering thoughtfully planned
-        developments and maintaining a direct connection with clients
-        throughout the project journey.
-      </p>
-
-      {/* CEO DETAILS */}
-      <div className="grid grid-cols-2 gap-6 border-t border-ink-900/10 pt-7">
-
-        <div>
-          <p className="text-xs uppercase tracking-wider text-slate-450">
-            Position
-          </p>
-
-          <p className="mt-2 text-sm font-semibold text-ink-950">
-            Chief Executive Officer
-          </p>
-        </div>
-
-        <div>
-          <p className="text-xs uppercase tracking-wider text-slate-450">
-            Location
-          </p>
-
-          <p className="mt-2 text-sm font-semibold text-ink-950">
-            Gulberg Greens, Islamabad
-          </p>
-        </div>
-
-        <div>
-          <p className="text-xs uppercase tracking-wider text-slate-450">
-            Industry
-          </p>
-
-          <p className="mt-2 text-sm font-semibold text-ink-950">
-            Real Estate & Construction
-          </p>
-        </div>
-
-        <div>
-          <p className="text-xs uppercase tracking-wider text-slate-450">
-            Focus
-          </p>
-
-          <p className="mt-2 text-sm font-semibold text-ink-950">
-            Quality & Transparency
-          </p>
-        </div>
-
-      </div>
-
-      <Link
-        to="/contact"
-        className="group mt-2 flex w-fit items-center gap-4 rounded-full bg-ink-950 py-2 pl-6 pr-2 text-sm font-bold text-paper"
-      >
-        Get in Touch
-
-        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-paper text-ink-950 transition-transform group-hover:rotate-45">
-          <ArrowUpRight size={16} />
-        </span>
-      </Link>
-
-    </motion.div>
-
-  </div>
-
-</section>
-
-      {/* BLOCK CATEGORIES */}
-      <section className="container-wide py-24">
-        <SectionHeading
-          eyebrow="Explore Gulberg Greens"
-          title="Find the block that fits your lifestyle"
-          description="D-Markaz, Gulberg Farmhouses or Gulberg Residencia — every block is planned around its own kind of living."
+        <img
+          src="/src/assets/videos/hero-image.webp"
+          alt={`${siteInfo.companyName} — Gulberg Greens, Islamabad`}
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {blockCategories.map((cat, i) => (
-            <motion.div
-              key={cat.id}
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
+
+        <div className="absolute inset-0 bg-black/10" />
+
+
+        <div className="container-wide relative z-10 flex min-h-[82vh] items-center">
+
+          <div className="max-w-3xl pt-16">
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative aspect-[3/4] overflow-hidden rounded-md"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#c99a55]"
             >
-              <SmartImage
-                src={cat.image}
-                alt={cat.label}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-950/30 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6">
-                <h3 className="font-display text-2xl text-paper">{cat.label}</h3>
-                <p className="text-sm text-paper/70">{cat.description}</p>
-                <Link
-                  to={`/blocks?category=${cat.id}`}
-                  className="mt-2 w-fit text-sm font-semibold text-bronze-400 hover:text-bronze-300"
-                >
-                  Discover More →
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              Premium Real Estate & Construction
+            </motion.p>
 
-      {/* FEATURED BLOCKS */}
-      <section className="bg-paper-dim bg-paper/60 py-24">
-        <div className="container-wide">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading eyebrow="Featured Blocks" title="Popular blocks right now" />
-            <Button to="/blocks" variant="ghost" icon={ArrowRight}>
-              View All Blocks
-            </Button>
-          </div>
-          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {featuredBlocks.map((block) => (
-              <BlockCard key={block.id} block={block} />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* FEATURED PROPERTIES */}
-      <section className="container-wide py-24">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading eyebrow="Featured Listings" title="Properties you might love" />
-          <Button to="/properties" variant="ghost" icon={ArrowRight}>
-            View All Properties
-          </Button>
-        </div>
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {featuredProperties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
-          ))}
-        </div>
-      </section>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-3xl font-display text-5xl leading-[0.95] text-white sm:text-6xl md:text-7xl lg:text-[82px]"
+            >
+              Building
+              <br />
+              Better Lifestyles
+            </motion.h1>
 
-      {/* HOW WE WORK */}
-      <section className="bg-ink-950 py-24">
-        <div className="container-wide">
-          <SectionHeading
-            eyebrow="Our Process"
-            title="How we work, from concept to handover"
-            light
-            align="center"
-          />
-          <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-4">
-            {howWeWork.map((step, i) => (
-              <motion.div
-                key={step.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative flex flex-col gap-3 border-t border-paper/15 pt-6"
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.1,
+              }}
+              className="mt-7 max-w-xl text-base leading-7 text-white/80 md:text-lg"
+            >
+              Exceptional properties, inspired design.
+              <br />
+              A more beautiful tomorrow.
+            </motion.p>
+
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+              }}
+              className="mt-9 flex flex-wrap gap-4"
+            >
+
+              <Link
+                to="/properties"
+                className="group flex items-center gap-4 rounded-full bg-[#c99a55] px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-[#d9ad6d]"
               >
-                <span className="font-display text-3xl text-bronze-400">{step.step}</span>
-                <h3 className="font-display text-lg text-paper">{step.title}</h3>
-                <p className="text-sm text-paper/60">{step.description}</p>
-              </motion.div>
-            ))}
+                Explore Properties
+
+                <ArrowRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+
+
+              <Link
+                to="/about"
+                className="group flex items-center gap-3 rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink-950"
+              >
+                About Us
+
+              
+              </Link>
+
+            </motion.div>
+
           </div>
+
         </div>
+
+
+        <div className="absolute bottom-8 right-8 hidden items-center gap-8 text-white md:flex">
+
+          <div className="text-right">
+
+            <span className="block text-xs text-white/50">
+              01
+            </span>
+
+            <span className="text-sm">
+              Real Estate
+            </span>
+
+          </div>
+
+
+          <div className="h-px w-10 bg-white/30" />
+
+
+          <div>
+
+            <span className="block text-xs text-white/50">
+              02
+            </span>
+
+            <span className="text-sm">
+              Construction
+            </span>
+
+          </div>
+
+        </div>
+
       </section>
 
-      {/* CTA */}
-      <section className="container-wide py-24">
-        <div className="flex flex-col items-center gap-6 rounded-md bg-bronze-500 px-8 py-16 text-center">
-          <h2 className="max-w-2xl font-display text-3xl text-ink-950 md:text-4xl">
-            Ready to find your next property, or start your next build?
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button to="/contact" variant="dark">
-              Contact Our Team
-            </Button>
-            <Button href={getWhatsAppLink('general')} variant="outline" className="border-ink-950 text-ink-950 hover:bg-ink-950 hover:text-paper">
-              Chat on WhatsApp
-            </Button>
-          </div>
+
+      {/* =====================================================
+          ABOUT
+      ===================================================== */}
+
+      <section className="bg-[#f6f4ee] py-20 md:py-28">
+
+        <div className="container-wide grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+
+
+          {/* LEFT IMAGES */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
+            className="relative min-h-[460px]"
+          >
+
+            <div className="absolute left-0 top-0 h-[390px] w-[78%] overflow-hidden">
+
+              <video
+                src="https://res.cloudinary.com/qrcvira2/video/upload/v1790271875/hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+              />
+
+            </div>
+
+
+            <div className="absolute bottom-0 right-0 h-[230px] w-[55%] overflow-hidden border-[10px] border-[#f6f4ee]">
+
+              <img
+                src="/src/assets/images/blocks/Dmarkaz main.jpeg"
+                alt="Al Harmain Associates"
+                className="h-full w-full object-cover"
+              />
+
+            </div>
+
+
+            <div className="absolute bottom-8 left-0 z-10 bg-white px-6 py-5 shadow-lg">
+
+              <p className="text-xs uppercase tracking-[0.2em] text-[#b88945]">
+                Architecture
+              </p>
+
+              <p className="mt-1 font-display text-lg text-ink-950">
+                People
+              </p>
+
+              <p className="font-display text-lg text-ink-950">
+                Communities
+              </p>
+
+            </div>
+
+          </motion.div>
+
+
+          {/* RIGHT ABOUT CONTENT */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.7,
+            }}
+          >
+
+            <div className="relative">
+
+              {/* STAMP */}
+
+              <div className="absolute right-0 top-0 hidden h-32 w-32 items-center justify-center rounded-full border border-[#b88945]/30 md:flex">
+
+                <div className="absolute inset-2 rounded-full border border-[#b88945]/20" />
+
+                <div className="text-center">
+
+                  <div className="flex items-end justify-center gap-[3px]">
+
+                    <span className="block h-5 w-2 bg-[#b88945]" />
+                    <span className="block h-8 w-2 bg-[#b88945]" />
+                    <span className="block h-11 w-2 bg-[#b88945]" />
+
+                  </div>
+
+                  <p className="mt-2 text-[7px] font-bold uppercase tracking-[0.25em] text-[#b88945]">
+                    Al Harmain
+                  </p>
+
+                  <p className="text-[6px] uppercase tracking-[0.22em] text-[#b88945]/80">
+                    Associates
+                  </p>
+
+                </div>
+
+                <span className="absolute -top-1 left-1/2 -translate-x-1/2 bg-[#f6f4ee] px-2 text-[8px] uppercase tracking-[0.25em] text-[#b88945]">
+                  Building
+                </span>
+
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-[#f6f4ee] px-2 text-[8px] uppercase tracking-[0.2em] text-[#b88945]">
+                  Better Lifestyles
+                </span>
+
+              </div>
+
+
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#b88945]">
+                About Al Harmain
+              </p>
+
+
+              <h2 className="max-w-xl pr-0 font-display text-4xl leading-[1.02] text-ink-950 md:pr-36 md:text-5xl">
+
+                A Vision for
+                <br />
+
+                Extraordinary Living
+
+              </h2>
+
+
+              <p className="mt-6 max-w-xl text-sm leading-7 text-slate-500">
+
+                Al Harmain Associates is a leading real estate and
+                construction group, dedicated to creating exceptional spaces
+                that inspire communities and elevate lifestyles.
+
+              </p>
+
+
+              <div className="mt-8 grid max-w-xl grid-cols-3 gap-6 border-t border-ink-900/10 pt-7">
+
+                {siteInfo.stats
+                  .slice(0, 3)
+                  .map((stat) => (
+
+                    <div key={stat.label}>
+
+                      <AnimatedCounter
+                        value={stat.value}
+                        suffix={stat.suffix}
+                      />
+
+                      <p className="mt-1 text-xs text-slate-500">
+                        {stat.label}
+                      </p>
+
+                    </div>
+
+                  ))}
+
+              </div>
+
+
+              <Button
+                to="/about"
+                variant="dark"
+                className="mt-8 w-fit"
+              >
+                More About Us
+              </Button>
+
+            </div>
+
+          </motion.div>
+
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="bg-[#0b1727] py-20 md:py-28">
+
+        <div className="container-wide">
+
+          <div className="mx-auto max-w-3xl text-center">
+
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c99a55]">
+              Our Expertise
+            </p>
+
+            <h2 className="mt-3 font-display text-4xl text-white md:text-5xl">
+              End-to-End Real Estate Solutions
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-white/55">
+              From visionary design to flawless construction, we deliver
+              integrated solutions across every stage of your real estate journey.
+            </p>
+
+          </div>
+
+
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+            {services.slice(0, 4).map((service) => (
+
+              <div
+                key={service.id}
+                className="group overflow-hidden border border-white/10 bg-[#101f32] transition duration-300 hover:-translate-y-1 hover:border-[#c99a55]/50"
+              >
+
+                <ServiceCard
+                  service={service}
+                />
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          WHY CHOOSE US
+      ===================================================== */}
+
+      <section className="bg-[#f6f4ee] py-20 md:py-24">
+
+        <div className="container-wide">
+
+          <div className="text-center">
+
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b88945]">
+              Why Choose Us
+            </p>
+
+            <h2 className="mt-3 font-display text-4xl text-ink-950 md:text-5xl">
+
+              More Than Properties,
+              <br className="hidden md:block" />
+              We Build Possibilities
+
+            </h2>
+
+          </div>
+
+
+          <div className="mt-14 grid border-y border-ink-900/10 md:grid-cols-4">
+
+            {whyChooseUs.map((item, index) => {
+
+              const Icon = item.icon
+
+              return (
+
+                <div
+                  key={item.title}
+                  className={`p-7 md:p-8 ${
+                    index !== 0
+                      ? 'border-t border-ink-900/10 md:border-l md:border-t-0'
+                      : ''
+                  }`}
+                >
+
+                  <Icon
+                    size={24}
+                    strokeWidth={1.4}
+                    className="text-[#b88945]"
+                  />
+
+                  <h3 className="mt-5 font-display text-lg text-ink-950">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-500">
+                    {item.description}
+                  </p>
+
+                </div>
+
+              )
+
+            })}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CEO / LEADERSHIP
+      ===================================================== */}
+
+      <section className="relative overflow-hidden bg-[#f1eee6] py-20 md:py-28">
+
+        <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#c99a55]/5 blur-3xl" />
+
+
+        <div className="container-wide relative z-10">
+
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+
+
+            {/* CEO IMAGE */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -35,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: '-100px',
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              className="relative"
+            >
+
+              <div className="relative h-[500px] overflow-hidden md:h-[590px]">
+
+                <img
+                  src="/src/assets/images/ceo2.jpeg"
+                  alt="Raja Abdul Rafay - CEO of Al Harmain Associates"
+                  className="h-full w-full object-cover object-center"
+                />
+
+                <div className="absolute inset-0 bg-white/[0.04]" />
+
+
+                <div className="absolute bottom-0 left-0 w-full bg-[#0b1727]/95 px-7 py-6 md:px-8 md:py-7">
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/60">
+                    Meet Our CEO
+                  </p>
+
+                  <p
+                    className="mt-2 text-[30px] leading-none text-white md:text-[36px]"
+                    style={{
+                      fontFamily:
+                        '"Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive',
+                      fontStyle: 'italic',
+                      fontWeight: 400,
+                    }}
+                  >
+                    Raja Abdul Rafay
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="absolute -bottom-3 left-8 h-[3px] w-20 bg-[#b88945]" />
+
+            </motion.div>
+
+
+            {/* CEO CONTENT */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: '-100px',
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              className="flex flex-col"
+            >
+
+              <div className="flex items-center gap-3">
+
+                <span className="h-px w-10 bg-[#b88945]" />
+
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b88945]">
+                  Leadership
+                </span>
+
+              </div>
+
+
+              <h2 className="mt-5 max-w-xl font-display text-4xl leading-[1.05] text-ink-950 md:text-5xl lg:text-[56px]">
+
+                A Message
+                <br />
+
+                <span>
+                  from Our CEO
+                </span>
+
+              </h2>
+
+
+              <div className="mt-7 h-px w-12 bg-[#b88945]" />
+
+
+              <p className="mt-7 max-w-2xl text-sm leading-7 text-slate-500 md:text-[15px]">
+
+                As the Chief Executive Officer of Al Harmain Associates,
+                Raja Abdul Rafay leads the company with a focus on quality,
+                transparency and long-term value in real estate and construction.
+
+              </p>
+
+
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-500 md:text-[15px]">
+
+                His leadership is focused on delivering thoughtfully planned
+                developments and maintaining a direct connection with clients
+                throughout the project journey.
+
+              </p>
+
+
+              <div className="mt-9 grid grid-cols-1 gap-7 border-t border-ink-900/10 pt-7 sm:grid-cols-2">
+
+                <div>
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                    Position
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold text-ink-950">
+                    Chief Executive Officer
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                    Location
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold text-ink-950">
+                    Gulberg Greens, Islamabad
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                    Industry
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold text-ink-950">
+                    Real Estate & Construction
+                  </p>
+
+                </div>
+
+
+                <div>
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-400">
+                    Focus
+                  </p>
+
+                  <p className="mt-2 text-sm font-semibold text-ink-950">
+                    Quality & Transparency
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="mt-8">
+
+                <p
+                  className="text-[30px] text-ink-950/70"
+                  style={{
+                    fontFamily:
+                      '"Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  Raja Abdul Rafay
+                </p>
+
+                <div className="mt-1 h-px w-32 bg-ink-900/20" />
+
+              </div>
+
+
+              <Link
+                to="/contact"
+                className="group mt-8 flex w-fit items-center gap-5 bg-[#0b1727] py-3 pl-6 pr-3 text-sm font-semibold text-white transition hover:bg-[#b88945]"
+              >
+
+                Our Leadership
+
+                <span className="flex h-8 w-8 items-center justify-center bg-white text-ink-950 transition-transform group-hover:translate-x-1">
+
+                  <ArrowUpRight size={15} />
+
+                </span>
+
+              </Link>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          EXPLORE AREAS
+      ===================================================== */}
+
+      <section className="bg-[#f6f4ee] py-20 md:py-24">
+
+        <div className="container-wide">
+
+          <div className="flex flex-wrap items-end justify-between gap-5">
+
+            <div>
+
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b88945]">
+                Explore Areas
+              </p>
+
+              <h2 className="mt-3 font-display text-4xl text-ink-950 md:text-5xl">
+
+                Find the Perfect Location
+                <br className="hidden md:block" />
+                for Your Lifestyle
+
+              </h2>
+
+            </div>
+
+
+            <Link
+              to="/blocks"
+              className="flex items-center gap-2 text-sm font-semibold text-ink-950"
+            >
+
+              View All Areas
+
+              <ArrowRight size={16} />
+
+            </Link>
+
+          </div>
+
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+
+            {featuredBlocks.map((block) => (
+
+              <div
+                key={block.id}
+                className="overflow-hidden"
+              >
+
+                <BlockCard
+                  block={block}
+                />
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FEATURED PROPERTIES
+      ===================================================== */}
+
+      <section className="bg-white py-20 md:py-24">
+
+        <div className="container-wide">
+
+          <div className="flex flex-wrap items-end justify-between gap-5">
+
+            <div>
+
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b88945]">
+                Popular Properties
+              </p>
+
+              <h2 className="mt-3 font-display text-4xl text-ink-950 md:text-5xl">
+                Featured Properties
+              </h2>
+
+            </div>
+
+
+            <Link
+              to="/properties"
+              className="flex items-center gap-2 text-sm font-semibold"
+            >
+
+              View All Properties
+
+              <ArrowRight size={16} />
+
+            </Link>
+
+          </div>
+
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+            {featuredProperties.map((property) => (
+
+              <PropertyCard
+                key={property.id}
+                property={property}
+              />
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FROM CONCEPT TO HANDOVER
+      ===================================================== */}
+
+      <section className="relative overflow-hidden bg-[#071525] py-20 md:py-24">
+
+        <div className="absolute inset-0">
+
+          <img
+            src="/src/assets/images/block-hero.jpg"
+            alt=""
+            className="h-full w-full object-cover opacity-20"
+          />
+
+          <div className="absolute inset-0 bg-[#071525]/90" />
+
+        </div>
+
+
+        <div className="container-wide relative z-10">
+
+          <div className="mx-auto max-w-3xl text-center">
+
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#c99a55]">
+              Our Process
+            </p>
+
+            <h2 className="mt-3 font-display text-4xl text-white md:text-5xl">
+              From Concept to Handover
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/60">
+              A seamless journey, built on trust, expertise, and excellence.
+            </p>
+
+          </div>
+
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+
+            {/* 01 */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group"
+            >
+
+              <div className="relative h-[170px] overflow-hidden">
+
+                <img
+                  src="/src/assets/images/services/architecture-hero-image.jpg"
+                  alt="Consultation and Planning"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/10" />
+
+              </div>
+
+
+              <div className="mt-4 flex items-start gap-4">
+
+                <span className="font-display text-3xl text-[#c99a55]">
+                  01
+                </span>
+
+                <div className="flex-1">
+
+                  <div className="flex items-center justify-between gap-3">
+
+                    <h3 className="font-display text-lg text-white">
+                      Consultation & Planning
+                    </h3>
+
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/30 text-white/80">
+                      <ArrowUpRight size={13} />
+                    </span>
+
+                  </div>
+
+                  <p className="mt-2 text-xs leading-5 text-white/55">
+                    Understanding your vision and goals.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+
+            {/* 02 */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1,
+              }}
+              className="group"
+            >
+
+              <div className="relative h-[170px] overflow-hidden">
+
+                <img
+                  src="/src/assets/images/service-hero.jpg"
+                  alt="Design and Development"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/10" />
+
+              </div>
+
+
+              <div className="mt-4 flex items-start gap-4">
+
+                <span className="font-display text-3xl text-[#c99a55]">
+                  02
+                </span>
+
+                <div className="flex-1">
+
+                  <div className="flex items-center justify-between gap-3">
+
+                    <h3 className="font-display text-lg text-white">
+                      Design & Development
+                    </h3>
+
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/30 text-white/80">
+                      <ArrowUpRight size={13} />
+                    </span>
+
+                  </div>
+
+                  <p className="mt-2 text-xs leading-5 text-white/55">
+                    Turning ideas into inspiring designs.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+
+            {/* 03 */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+              }}
+              className="group"
+            >
+
+              <div className="relative h-[170px] overflow-hidden">
+
+                <img
+                  src="/src/assets/images/block-hero.jpg"
+                  alt="Construction"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/10" />
+
+              </div>
+
+
+              <div className="mt-4 flex items-start gap-4">
+
+                <span className="font-display text-3xl text-[#c99a55]">
+                  03
+                </span>
+
+                <div className="flex-1">
+
+                  <div className="flex items-center justify-between gap-3">
+
+                    <h3 className="font-display text-lg text-white">
+                      Construction
+                    </h3>
+
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/30 text-white/80">
+                      <ArrowUpRight size={13} />
+                    </span>
+
+                  </div>
+
+                  <p className="mt-2 text-xs leading-5 text-white/55">
+                    Quality execution with complete transparency.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+
+            {/* 04 */}
+
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3,
+              }}
+              className="group"
+            >
+
+              <div className="relative h-[170px] overflow-hidden">
+
+                <img
+                  src="/src/assets/images/services/finishing-design.jpg"
+                  alt="Finishing and Handover"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-black/10" />
+
+              </div>
+
+
+              <div className="mt-4 flex items-start gap-4">
+
+                <span className="font-display text-3xl text-[#c99a55]">
+                  04
+                </span>
+
+                <div className="flex-1">
+
+                  <div className="flex items-center justify-between gap-3">
+
+                    <h3 className="font-display text-lg text-white">
+                      Handover
+                    </h3>
+
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/30 text-white/80">
+                      <ArrowUpRight size={13} />
+                    </span>
+
+                  </div>
+
+                  <p className="mt-2 text-xs leading-5 text-white/55">
+                    Delivering your vision with care and excellence.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          READY TO FIND YOUR NEXT PROPERTY
+      ===================================================== */}
+
+      <section className="relative overflow-hidden">
+
+        <div className="relative min-h-[370px] md:min-h-[410px]">
+
+          <img
+            src="/src/assets/images/block-hero.jpg"
+            alt="Find your next property"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1727]/95 via-[#0b1727]/75 to-[#0b1727]/20" />
+
+
+          <div className="container-wide relative z-10 flex min-h-[370px] items-center md:min-h-[410px]">
+
+            <div className="max-w-2xl">
+
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#d5ae70]">
+                Let's Build Together
+              </p>
+
+
+              <h2 className="mt-4 max-w-xl font-display text-4xl leading-[1.05] text-white md:text-5xl">
+
+                Ready to Find Your Next Property
+                <br className="hidden md:block" />
+
+                or Start Your Next Build?
+
+              </h2>
+
+
+              <p className="mt-4 text-sm text-white/70 md:text-base">
+                Let's turn your vision into reality.
+              </p>
+
+
+              <div className="mt-7 flex flex-wrap gap-3">
+
+                <Button
+                  to="/contact"
+                  variant="dark"
+                  className="bg-[#d8b26d] text-ink-950 hover:bg-[#e4c486]"
+                >
+                  Get in Touch
+                </Button>
+
+
+                <Button
+                  to="/properties"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-ink-950"
+                >
+                  Explore Properties
+                </Button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
     </div>
+
   )
 }
