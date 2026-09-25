@@ -7,7 +7,7 @@ import { services } from '../data/services'
 import { blockNavTree } from '../data/blocks'
 import { getWhatsAppLink } from '../utils/whatsapp'
 import SmartImage from './SmartImage'
-
+import logo from '../assets/images/brand/logo.png'
 // Flat (single-level) dropdown source: Services
 // Nested source (supports one level of "children" flyout): Blocks
 const dropdownSources = {
@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-4 rounded-full bg-white/95 px-7 py-5 shadow-soft backdrop-blur">
           <Link to="/" className="shrink-0">
             <SmartImage
-              src="/src/assets/images/brand/logo.png"
+              src={logo}
               alt={siteInfo.companyName}
               className="h-14 w-auto object-contain md:h-11"
             />
