@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import { ArrowUpRight, FolderKanban } from 'lucide-react'
 import { useState } from 'react'
@@ -5,6 +6,8 @@ import { useState } from 'react'
 import PageHeader from '../components/PageHeader'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
+
+import projectHero from '../assets/images/projects/project-hero.png'
 
 const statuses = [
   'All',
@@ -43,7 +46,7 @@ export default function Projects() {
         eyebrow="Our Work"
         title="Projects"
         description="Developments currently underway, planned, and completed by Al Harmain Associates."
-        image="/src/assets/images/projects/project-hero.png"
+        image={projectHero}
         breadcrumb={[{ label: 'Projects' }]}
       />
 
@@ -194,7 +197,7 @@ export default function Projects() {
 
         <div className="absolute inset-0 opacity-10">
           <img
-            src="/src/assets/images/projects/project-hero.png"
+            src={projectHero}
             alt=""
             className="h-full w-full object-cover"
           />
@@ -258,3 +261,4 @@ export default function Projects() {
     </div>
   )
 }
+

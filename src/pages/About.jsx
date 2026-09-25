@@ -1,8 +1,8 @@
+
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
   ArrowUpRight,
-  Building2,
   Compass,
   Handshake,
   MapPin,
@@ -14,7 +14,6 @@ import {
 import aboutCover from '../assets/images/hero-back-image.png'
 
 import PageHeader from '../components/PageHeader'
-import SectionHeading from '../components/SectionHeading'
 import SmartImage from '../components/SmartImage'
 import Button from '../components/Button'
 
@@ -86,6 +85,7 @@ export default function About() {
       {/* =========================================================
           HERO
       ========================================================= */}
+
       <PageHeader
         eyebrow="Who We Are"
         title="About Al Harmain Associates"
@@ -97,6 +97,7 @@ export default function About() {
       {/* =========================================================
           INTRO / STORY
       ========================================================= */}
+
       <section className="relative bg-paper py-20 md:py-28">
         <div className="container-wide">
 
@@ -118,10 +119,8 @@ export default function About() {
                   className="h-[460px] w-full object-cover sm:h-[560px]"
                 />
 
-                {/* Image overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
 
-                {/* Experience badge */}
                 <div className="absolute bottom-6 left-6 bg-paper px-6 py-5 shadow-xl sm:bottom-8 sm:left-8">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-bronze-600">
                     Al Harmain
@@ -135,7 +134,6 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Floating location card */}
               <div className="absolute -bottom-7 right-5 hidden w-52 bg-ink-950 p-5 text-paper shadow-2xl sm:block md:right-0">
                 <MapPin size={18} className="mb-3 text-bronze-400" />
 
@@ -152,7 +150,6 @@ export default function About() {
                 </p>
               </div>
 
-              {/* Decorative square */}
               <div className="absolute -left-3 -top-3 h-20 w-20 border border-bronze-500/40" />
             </motion.div>
 
@@ -193,7 +190,6 @@ export default function About() {
                 </p>
               </div>
 
-              {/* Location */}
               <div className="mt-8 flex items-center gap-3 border-t border-ink-900/10 pt-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-bronze-500/10">
                   <MapPin size={17} className="text-bronze-600" />
@@ -224,6 +220,7 @@ export default function About() {
       {/* =========================================================
           STATS
       ========================================================= */}
+
       <section className="bg-ink-950 py-16 md:py-20">
         <div className="container-wide">
 
@@ -317,6 +314,7 @@ export default function About() {
       {/* =========================================================
           VALUES
       ========================================================= */}
+
       <section className="bg-[#f4f1ea] py-20 md:py-24">
         <div className="container-wide">
 
@@ -394,12 +392,13 @@ export default function About() {
       {/* =========================================================
           CEO SECTION
       ========================================================= */}
+
       <section className="relative overflow-hidden bg-white py-20 md:py-28">
         <div className="container-wide">
 
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
 
-            {/* CEO image */}
+            {/* CEO IMAGE */}
             <motion.div
               variants={fadeLeft}
               initial="hidden"
@@ -429,7 +428,6 @@ export default function About() {
                   </div>
                 </div>
 
-                {/* CEO card */}
                 <div className="absolute -bottom-7 -right-5 hidden w-48 bg-paper p-5 shadow-xl sm:block">
                   <Quote
                     size={23}
@@ -443,7 +441,7 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* CEO content */}
+            {/* CEO CONTENT */}
             <motion.div
               variants={fadeRight}
               initial="hidden"
@@ -502,6 +500,7 @@ export default function About() {
       {/* =========================================================
           AREAS / LOCATION
       ========================================================= */}
+
       <section className="bg-ink-950 py-20 md:py-24">
         <div className="container-wide">
 
@@ -533,7 +532,10 @@ export default function About() {
               </p>
 
               <div className="mt-8 flex items-start gap-4 border-t border-paper/10 pt-6">
-                <MapPin className="mt-1 shrink-0 text-bronze-400" size={20} />
+                <MapPin
+                  className="mt-1 shrink-0 text-bronze-400"
+                  size={20}
+                />
 
                 <div>
                   <p className="text-sm font-medium text-paper">
@@ -555,11 +557,13 @@ export default function About() {
               className="relative"
             >
               <div className="overflow-hidden">
+
                 <SmartImage
                   src="/src/assets/images/blocks/block-hero-image.webp"
                   alt="Gulberg Greens Islamabad"
                   className="h-[400px] w-full object-cover opacity-90 transition duration-700 hover:scale-105"
                 />
+
               </div>
 
               <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 to-transparent" />
@@ -582,6 +586,7 @@ export default function About() {
       {/* =========================================================
           PROCESS
       ========================================================= */}
+
       <section className="bg-paper py-20 md:py-28">
         <div className="container-wide">
 
@@ -606,7 +611,6 @@ export default function About() {
 
           <div className="relative mt-16">
 
-            {/* Desktop connecting line */}
             <div className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-ink-900/10 lg:block" />
 
             <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -645,7 +649,9 @@ export default function About() {
       {/* =========================================================
           CTA
       ========================================================= */}
+
       <section className="relative overflow-hidden bg-ink-950">
+
         <div className="absolute inset-0 opacity-20">
           <SmartImage
             src="/src/assets/images/about-hero.jpg"
@@ -681,6 +687,7 @@ export default function About() {
             </div>
 
             <div className="flex flex-wrap gap-3">
+
               <Button to="/contact">
                 Get in Touch
                 <ArrowRight size={16} />
@@ -690,6 +697,7 @@ export default function About() {
                 Explore Properties
                 <ArrowUpRight size={16} />
               </Button>
+
             </div>
 
           </div>

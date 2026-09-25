@@ -1,3 +1,113 @@
+
+// =============================================================
+// PROPERTY IMAGES
+// =============================================================
+
+// Apartments
+import apr1 from '../assets/images/properties/apr1.jpeg'
+import apr1_1 from '../assets/images/properties/apr1-1.jpeg'
+
+import apr1_3 from '../assets/images/properties/apr1-3.jpeg'
+import apr1_4 from '../assets/images/properties/apr1-4.jpeg'
+import apr1_5 from '../assets/images/properties/apr1-5.jpeg'
+
+
+import apr2 from '../assets/images/properties/apr2.jpeg'
+import apr2_1 from '../assets/images/properties/apr2-1.jpeg'
+
+import apr2_3 from '../assets/images/properties/apr2-3.jpeg'
+import apr2_4 from '../assets/images/properties/apr2-4.jpeg'
+
+import apt3 from '../assets/images/properties/apt3.jpeg'
+import apt3_1 from '../assets/images/properties/apt3-1.jpeg'
+import apt3_2 from '../assets/images/properties/apt3-2.jpeg'
+import apt3_3 from '../assets/images/properties/apt3-3.jpeg'
+
+import apt4 from '../assets/images/properties/apt4.jpeg'
+import apt4_1 from '../assets/images/properties/apt4-1.jpeg'
+import apt4_2 from '../assets/images/properties/apt4-2.jpeg'
+import apt4_3 from '../assets/images/properties/apt4-3.jpeg'
+
+import apt5 from '../assets/images/properties/apt5.jpeg'
+import apt5_1 from '../assets/images/properties/apt5-1.jpeg'
+import apt5_2 from '../assets/images/properties/apt5-2.jpeg'
+import apt5_3 from '../assets/images/properties/apt5-3.jpeg'
+import apt5_4 from '../assets/images/properties/apt5-4.jpeg'
+
+// Farmhouses
+import farm1 from '../assets/images/properties/farm1.jpeg'
+import farm1_1 from '../assets/images/properties/farm1-1.jpeg'
+import farm1_2 from '../assets/images/properties/farm1-2.jpeg'
+import farm1_3 from '../assets/images/properties/farm1-3.jpeg'
+import farm1_4 from '../assets/images/properties/farm1-4.jpeg'
+import farm1_5 from '../assets/images/properties/farm1-5.jpeg'
+import farm1_6 from '../assets/images/properties/farm1-6.jpeg'
+
+import farm2 from '../assets/images/properties/farm2.jpeg'
+import farm2_1 from '../assets/images/properties/farm2-1.jpeg'
+import farm2_2 from '../assets/images/properties/farm2-2.jpeg'
+import farm2_3 from '../assets/images/properties/farm2-3.jpeg'
+import farm2_4 from '../assets/images/properties/farm2-4.jpeg'
+import farm2_5 from '../assets/images/properties/farm2-5.jpeg'
+
+import farm3 from '../assets/images/properties/farm3.jpeg'
+import farm3_1 from '../assets/images/properties/farm3-1.jpeg'
+import farm3_2 from '../assets/images/properties/farm3-2.jpeg'
+import farm3_3 from '../assets/images/properties/farm3-3.jpeg'
+
+import farm4 from '../assets/images/properties/farm4.jpeg'
+import farm4_1 from '../assets/images/properties/farm4-1.jpeg'
+import farm4_2 from '../assets/images/properties/farm4-2.jpeg'
+import farm4_3 from '../assets/images/properties/farm4-3.jpeg'
+import farm4_4 from '../assets/images/properties/farm4-4.jpeg'
+import farm4_5 from '../assets/images/properties/farm4-5.jpeg'
+
+import farm5 from '../assets/images/properties/farm5.jpeg'
+import farm5_1 from '../assets/images/properties/farm5-1.jpeg'
+import farm5_2 from '../assets/images/properties/farm5-2.jpeg'
+import farm5_3 from '../assets/images/properties/farm5-3.jpeg'
+import farm5_4 from '../assets/images/properties/farm5-4.jpeg'
+import farm5_5 from '../assets/images/properties/farm5-5.jpeg'
+import farm5_6 from '../assets/images/properties/farm5-6.jpeg'
+
+// Houses
+import house1 from '../assets/images/properties/house1.jpeg'
+import house1_1 from '../assets/images/properties/house1-1.jpeg'
+import house1_2 from '../assets/images/properties/house1-2.jpeg'
+
+import house2 from '../assets/images/properties/house2.jpeg'
+import house2_1 from '../assets/images/properties/house2-1.jpeg'
+import house2_2 from '../assets/images/properties/house2-2.jpeg'
+import house2_3 from '../assets/images/properties/house2-3.jpeg'
+import house2_4 from '../assets/images/properties/house2-4.jpeg'
+
+import house3 from '../assets/images/properties/house3.jpeg'
+import house3_1 from '../assets/images/properties/house3-1.jpeg'
+
+import house3_3 from '../assets/images/properties/house3-3.jpeg'
+import house3_4 from '../assets/images/properties/house3-4.jpeg'
+
+import house4 from '../assets/images/properties/house4.jpeg'
+import house4_1 from '../assets/images/properties/house4-1.jpeg'
+import house4_2 from '../assets/images/properties/house4-2.jpeg'
+import house4_3 from '../assets/images/properties/house4-3.jpeg'
+import house4_4 from '../assets/images/properties/house4-4.jpeg'
+import house4_5 from '../assets/images/properties/house4-5.jpeg'
+import house4_6 from '../assets/images/properties/house4-6.jpeg'
+import house4_7 from '../assets/images/properties/house4-7.jpeg'
+import house4_8 from '../assets/images/properties/house4-8.jpeg'
+
+import house5 from '../assets/images/properties/house5.jpeg'
+import house5_1 from '../assets/images/properties/house5-1.jpeg'
+import house5_2 from '../assets/images/properties/house5-2.jpeg'
+import house5_3 from '../assets/images/properties/house5-3.jpeg'
+import house5_4 from '../assets/images/properties/house5-4.jpeg'
+
+
+// =============================================================
+// PROPERTIES
+// =============================================================
+
 export const properties = [
   // =========================
   // APARTMENTS
@@ -13,14 +123,14 @@ export const properties = [
     bedrooms: 3,
     bathrooms: 3,
     area: '1,450 sq ft',
-    featuredImage: '/src/assets/images/properties/apr1.jpeg',
+    featuredImage: apr1,
     gallery: [
-      '/src/assets/images/properties/apr1-1.jpeg',
-      '/src/assets/images/properties/apr1-2.jpeg',
-      '/src/assets/images/properties/apr1-3.jpeg',
-          '/src/assets/images/properties/apr1-4.jpeg',
-      '/src/assets/images/properties/apr1-5.jpeg',
-      '/src/assets/images/properties/apr1-6.jpeg',
+      apr1_1,
+  
+      apr1_3,
+      apr1_4,
+      apr1_5,
+   
     ],
     video: null,
     youtubeUrl: '',
@@ -44,12 +154,12 @@ export const properties = [
     bedrooms: 3,
     bathrooms: 3,
     area: '1,475 sq ft',
-    featuredImage: '/src/assets/images/properties/apr2.jpeg',
+    featuredImage: apr2,
     gallery: [
-      '/src/assets/images/properties/apr2-1.jpeg',
-      '/src/assets/images/properties/apr2-2.jpeg',
-         '/src/assets/images/properties/apr2-3.jpeg',
-      '/src/assets/images/properties/apr2-4.jpeg',
+      apr2_1,
+    
+      apr2_3,
+      apr2_4,
     ],
     video: null,
     youtubeUrl: '',
@@ -73,11 +183,11 @@ export const properties = [
     bedrooms: 3,
     bathrooms: 3,
     area: '1475 sq ft',
-    featuredImage: '/src/assets/images/properties/apt3.jpeg',
+    featuredImage: apt3,
     gallery: [
-      '/src/assets/images/properties/apt3-1.jpeg',
-      '/src/assets/images/properties/apt3-2.jpeg',
-      '/src/assets/images/properties/apt3-3.jpeg',
+      apt3_1,
+      apt3_2,
+      apt3_3,
     ],
     video: null,
     youtubeUrl: '',
@@ -101,12 +211,11 @@ export const properties = [
     bedrooms: 3,
     bathrooms: 2,
     area: '1,167 sq ft',
-    featuredImage: '/src/assets/images/properties/apt4.jpeg',
+    featuredImage: apt4,
     gallery: [
-      '/src/assets/images/properties/apt4-1.jpeg',
-      '/src/assets/images/properties/apt4-2.jpeg',
-      '/src/assets/images/properties/apt4-3.jpeg',
-     
+      apt4_1,
+      apt4_2,
+      apt4_3,
     ],
     video: null,
     youtubeUrl: '',
@@ -130,12 +239,12 @@ export const properties = [
     bedrooms: 3,
     bathrooms: 3,
     area: '3250 sq ft',
-    featuredImage: '/src/assets/images/properties/apt5.jpeg',
+    featuredImage: apt5,
     gallery: [
-      '/src/assets/images/properties/apt5-1.jpeg',
-      '/src/assets/images/properties/apt5-2.jpeg',
-        '/src/assets/images/properties/apt5-3.jpeg',
-      '/src/assets/images/properties/apt5-4.jpeg',
+      apt5_1,
+      apt5_2,
+      apt5_3,
+      apt5_4,
     ],
     video: null,
     youtubeUrl: '',
@@ -162,14 +271,14 @@ export const properties = [
     bedrooms: 10,
     bathrooms: 7,
     area: '5 Kanal',
-    featuredImage: '/src/assets/images/properties/farm1.jpeg',
+    featuredImage: farm1,
     gallery: [
-      '/src/assets/images/properties/farm1-1.jpeg',
-      '/src/assets/images/properties/farm1-2.jpeg',
-      '/src/assets/images/properties/farm1-3.jpeg',
-          '/src/assets/images/properties/farm1-4.jpeg',
-      '/src/assets/images/properties/farm1-5.jpeg',
-      '/src/assets/images/properties/farm1-6.jpeg',
+      farm1_1,
+      farm1_2,
+      farm1_3,
+      farm1_4,
+      farm1_5,
+      farm1_6,
     ],
     video: null,
     youtubeUrl: '',
@@ -186,20 +295,20 @@ export const properties = [
     id: 'farm-2',
     title: '14 Kanal Executive Farmhouse',
     type: 'Farmhouse',
-    location: 'C Block, Gulberg Greens,Islamabad',
+    location: 'C Block, Gulberg Greens, Islamabad',
     price: '1.15 Arab',
     priceLabel: 'PKR 1.15 Arab',
     status: 'For Sale',
     bedrooms: 11,
     bathrooms: 7,
     area: '14 Kanal',
-    featuredImage: '/src/assets/images/properties/farm2.jpeg',
+    featuredImage: farm2,
     gallery: [
-      '/src/assets/images/properties/farm2-1.jpeg',
-      '/src/assets/images/properties/farm2-2.jpeg',
-       '/src/assets/images/properties/farm2-3.jpeg',
-      '/src/assets/images/properties/farm2-4.jpeg',
-      '/src/assets/images/properties/farm2-5.jpeg',
+      farm2_1,
+      farm2_2,
+      farm2_3,
+      farm2_4,
+      farm2_5,
     ],
     video: null,
     youtubeUrl: '',
@@ -216,18 +325,18 @@ export const properties = [
     id: 'farm-3',
     title: '8 Kanal Modern Farmhouse',
     type: 'Farmhouse',
-    location: ' Block C Gulberg Greens,Islamabad',
+    location: 'Block C Gulberg Greens, Islamabad',
     price: '65 cr',
     priceLabel: 'PKR 65 Crore',
     status: 'For Sale',
     bedrooms: 9,
     bathrooms: 6,
     area: '8 Kanal',
-    featuredImage: '/src/assets/images/properties/farm3.jpeg',
+    featuredImage: farm3,
     gallery: [
-      '/src/assets/images/properties/farm3-1.jpeg',
-      '/src/assets/images/properties/farm3-2.jpeg',
-       '/src/assets/images/properties/farm3-3.jpeg',
+      farm3_1,
+      farm3_2,
+      farm3_3,
     ],
     video: null,
     youtubeUrl: '',
@@ -251,13 +360,13 @@ export const properties = [
     bedrooms: 8,
     bathrooms: 6,
     area: '4 Kanal',
-    featuredImage: '/src/assets/images/properties/farm4.jpeg',
+    featuredImage: farm4,
     gallery: [
-      '/src/assets/images/properties/farm4-1.jpeg',
-      '/src/assets/images/properties/farm4-2.jpeg',
-       '/src/assets/images/properties/farm4-3.jpeg',
-      '/src/assets/images/properties/farm4-4.jpeg',
-      '/src/assets/images/properties/farm4-5.jpeg',
+      farm4_1,
+      farm4_2,
+      farm4_3,
+      farm4_4,
+      farm4_5,
     ],
     video: null,
     youtubeUrl: '',
@@ -274,21 +383,21 @@ export const properties = [
     id: 'farm-5',
     title: '12 Kanal Premium Farmhouse Estate',
     type: 'Farmhouse',
-    location: ' Block D, Gulberg Greens, Islamabad',
+    location: 'Block D, Gulberg Greens, Islamabad',
     price: '1.2 Arab',
     priceLabel: 'PKR 1.2 Arab',
     status: 'For Sale',
     bedrooms: 10,
     bathrooms: 6,
     area: '12 Kanal',
-    featuredImage: '/src/assets/images/properties/farm5.jpeg',
+    featuredImage: farm5,
     gallery: [
-      '/src/assets/images/properties/farm5-1.jpeg',
-      '/src/assets/images/properties/farm5-2.jpeg',
-      '/src/assets/images/properties/farm5-3.jpeg',
-       '/src/assets/images/properties/farm5-4.jpeg',
-      '/src/assets/images/properties/farm5-5.jpeg',
-      '/src/assets/images/properties/farm5-6.jpeg',
+      farm5_1,
+      farm5_2,
+      farm5_3,
+      farm5_4,
+      farm5_5,
+      farm5_6,
     ],
     video: null,
     youtubeUrl: '',
@@ -315,11 +424,11 @@ export const properties = [
     bedrooms: 4,
     bathrooms: 4,
     area: '5 Marla',
-    featuredImage: '/src/assets/images/properties/house1.jpeg',
+    featuredImage: house1,
     gallery: [
-      '/src/assets/images/properties/house1-1.jpeg',
-      '/src/assets/images/properties/house1-2.jpeg',
-      '/src/assets/images/properties/house1.jpeg',
+      house1_1,
+      house1_2,
+      house1,
     ],
     video: null,
     youtubeUrl: '',
@@ -343,12 +452,12 @@ export const properties = [
     bedrooms: 5,
     bathrooms: 5,
     area: '7 Marla',
-    featuredImage: '/src/assets/images/properties/house2.jpeg',
+    featuredImage: house2,
     gallery: [
-      '/src/assets/images/properties/house2-1.jpeg',
-      '/src/assets/images/properties/house2-2.jpeg',
-       '/src/assets/images/properties/house2-3.jpeg',
-      '/src/assets/images/properties/house2-4.jpeg',
+      house2_1,
+      house2_2,
+      house2_3,
+      house2_4,
     ],
     video: null,
     youtubeUrl: '',
@@ -372,12 +481,12 @@ export const properties = [
     bedrooms: 6,
     bathrooms: 6,
     area: '12.29 Marla',
-    featuredImage: '/src/assets/images/properties/house3.jpeg',
+    featuredImage: house3,
     gallery: [
-      '/src/assets/images/properties/house3-1.jpeg',
-      '/src/assets/images/properties/house3-2.jpeg',
-      '/src/assets/images/properties/house3-3.jpeg',
-      '/src/assets/images/properties/house3-4.jpeg',
+      house3_1,
+    
+      house3_3,
+      house3_4,
     ],
     video: null,
     youtubeUrl: '',
@@ -401,16 +510,16 @@ export const properties = [
     bedrooms: 7,
     bathrooms: 6,
     area: '1 Kanal',
-    featuredImage: '/src/assets/images/properties/house4.jpeg',
+    featuredImage: house4,
     gallery: [
-      '/src/assets/images/properties/house4-1.jpeg',
-      '/src/assets/images/properties/house4-2.jpeg',
-       '/src/assets/images/properties/house4-3.jpeg',
-      '/src/assets/images/properties/house4-4.jpeg',
-       '/src/assets/images/properties/house4-5.jpeg',
-      '/src/assets/images/properties/house4-6.jpeg',
-       '/src/assets/images/properties/house4-7.jpeg',
-      '/src/assets/images/properties/house4-8.jpeg',
+      house4_1,
+      house4_2,
+      house4_3,
+      house4_4,
+      house4_5,
+      house4_6,
+      house4_7,
+      house4_8,
     ],
     video: null,
     youtubeUrl: '',
@@ -434,12 +543,12 @@ export const properties = [
     bedrooms: 5,
     bathrooms: 6,
     area: '5 Marla',
-    featuredImage: '/src/assets/images/properties/house5.jpeg',
+    featuredImage: house5,
     gallery: [
-      '/src/assets/images/properties/house5-1.jpeg',
-      '/src/assets/images/properties/house5-2.jpeg',
-      '/src/assets/images/properties/house5-3.jpeg',
-      '/src/assets/images/properties/house5-4.jpeg',
+      house5_1,
+      house5_2,
+      house5_3,
+      house5_4,
     ],
     video: null,
     youtubeUrl: '',
@@ -452,6 +561,10 @@ export const properties = [
     blockId: 'block-C',
   },
 ]
+
+// =============================================================
+// PROPERTY FILTERS
+// =============================================================
 
 export const propertyTypes = [
   'House',
@@ -471,6 +584,10 @@ export const propertyStatuses = [
   'Rented',
 ]
 
+// =============================================================
+// HELPERS
+// =============================================================
+
 export const getPropertyById = (id) =>
   properties.find((p) => p.id === id)
 
@@ -482,3 +599,4 @@ export const getRelatedProperties = (property, count = 3) =>
         (p.type === property.type || p.location === property.location)
     )
     .slice(0, count)
+

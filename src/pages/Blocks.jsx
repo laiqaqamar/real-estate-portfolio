@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import blockHeroImage from '../assets/images/blocks/block-hero-image.webp'
 import { useSearchParams } from 'react-router-dom'
 import {
   MapPin,
@@ -32,7 +33,7 @@ export default function Blocks() {
         eyebrow="Al Harmain Associates"
         title="Gulberg Blocks"
         description="Explore thoughtfully planned communities across Gulberg Greens — from commercial destinations to premium residential and farmhouse areas."
-        image="/src/assets/images/blocks/block-hero-image.webp"
+        image={blockHeroImage}
         breadcrumb={[{ label: 'Gulberg Blocks' }]}
       />
 

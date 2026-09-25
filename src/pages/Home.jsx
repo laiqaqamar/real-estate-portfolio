@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
@@ -7,7 +8,6 @@ import {
   MessageCircle,
   ShieldCheck,
   UserCircle,
-  Play,
 } from 'lucide-react'
 
 import Button from '../components/Button'
@@ -16,10 +16,22 @@ import BlockCard from '../components/BlockCard'
 import PropertyCard from '../components/PropertyCard'
 import AnimatedCounter from '../components/AnimatedCounter'
 
-import { siteInfo, howWeWork } from '../data/siteData'
+import { siteInfo } from '../data/siteData'
 import { services } from '../data/services'
 import { blocks } from '../data/blocks'
 import { properties } from '../data/properties'
+
+// =========================================================
+// LOCAL IMAGES
+// =========================================================
+
+import heroImage from '../assets/videos/hero-image.webp'
+import dmarkazImage from '../assets/images/blocks/Dmarkaz main.jpeg'
+import ceoImage from '../assets/images/ceo2.jpeg'
+import blockHeroImage from '../assets/images/block-hero.jpg'
+import architectureHeroImage from '../assets/images/services/architecture-hero-image.jpg'
+import serviceHeroImage from '../assets/images/service-hero.jpg'
+import finishingDesignImage from '../assets/images/services/finishing-design.jpg'
 
 
 /* =========================================================
@@ -73,7 +85,7 @@ export default function Home() {
       <section className="relative min-h-[82vh] overflow-hidden bg-[#091321]">
 
         <img
-          src="/src/assets/videos/hero-image.webp"
+          src={heroImage}
           alt={`${siteInfo.companyName} — Gulberg Greens, Islamabad`}
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
@@ -152,8 +164,6 @@ export default function Home() {
                 className="group flex items-center gap-3 rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink-950"
               >
                 About Us
-
-              
               </Link>
 
             </motion.div>
@@ -244,7 +254,7 @@ export default function Home() {
             <div className="absolute bottom-0 right-0 h-[230px] w-[55%] overflow-hidden border-[10px] border-[#f6f4ee]">
 
               <img
-                src="/src/assets/images/blocks/Dmarkaz main.jpeg"
+                src={dmarkazImage}
                 alt="Al Harmain Associates"
                 className="h-full w-full object-cover"
               />
@@ -551,7 +561,7 @@ export default function Home() {
               <div className="relative h-[500px] overflow-hidden md:h-[590px]">
 
                 <img
-                  src="/src/assets/images/ceo2.jpeg"
+                  src={ceoImage}
                   alt="Raja Abdul Rafay - CEO of Al Harmain Associates"
                   className="h-full w-full object-cover object-center"
                 />
@@ -879,7 +889,7 @@ export default function Home() {
         <div className="absolute inset-0">
 
           <img
-            src="/src/assets/images/block-hero.jpg"
+            src={blockHeroImage}
             alt=""
             className="h-full w-full object-cover opacity-20"
           />
@@ -924,7 +934,7 @@ export default function Home() {
               <div className="relative h-[170px] overflow-hidden">
 
                 <img
-                  src="/src/assets/images/services/architecture-hero-image.jpg"
+                  src={architectureHeroImage}
                   alt="Consultation and Planning"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -981,7 +991,7 @@ export default function Home() {
               <div className="relative h-[170px] overflow-hidden">
 
                 <img
-                  src="/src/assets/images/service-hero.jpg"
+                  src={serviceHeroImage}
                   alt="Design and Development"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -1038,7 +1048,7 @@ export default function Home() {
               <div className="relative h-[170px] overflow-hidden">
 
                 <img
-                  src="/src/assets/images/block-hero.jpg"
+                  src={blockHeroImage}
                   alt="Construction"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -1095,7 +1105,7 @@ export default function Home() {
               <div className="relative h-[170px] overflow-hidden">
 
                 <img
-                  src="/src/assets/images/services/finishing-design.jpg"
+                  src={finishingDesignImage}
                   alt="Finishing and Handover"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -1151,7 +1161,7 @@ export default function Home() {
         <div className="relative min-h-[370px] md:min-h-[410px]">
 
           <img
-            src="/src/assets/images/block-hero.jpg"
+            src={blockHeroImage}
             alt="Find your next property"
             className="absolute inset-0 h-full w-full object-cover"
           />
@@ -1217,3 +1227,4 @@ export default function Home() {
 
   )
 }
+

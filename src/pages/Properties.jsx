@@ -8,7 +8,7 @@ import {
   X,
   ArrowUpDown,
 } from 'lucide-react'
-
+import farm1Image from '../assets/images/properties/farm1.jpeg'
 import PageHeader from '../components/PageHeader'
 import PropertyCard from '../components/PropertyCard'
 import { properties, propertyTypes, propertyStatuses } from '../data/properties'
@@ -99,7 +99,7 @@ export default function Properties() {
         eyebrow="Al Harmain Associates"
         title="Our Properties"
         description="Explore carefully selected residential, commercial and investment opportunities across Islamabad and beyond."
-        image="/src/assets/images/properties/farm1.jpeg"
+image={farm1Image}
         breadcrumb={[{ label: 'Properties' }]}
       />
 

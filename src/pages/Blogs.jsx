@@ -14,6 +14,8 @@ import SmartImage from '../components/SmartImage'
 import { blogs, blogCategories } from '../data/blogs'
 import { formatDate } from '../utils/format'
 
+import blogHeroImage from '../assets/images/blogs/blog-hero.png'
+
 export default function Blogs() {
   const [category, setCategory] = useState('All')
 
@@ -30,7 +32,7 @@ export default function Blogs() {
         eyebrow="Al Harmain Associates"
         title="Insights & Ideas"
         description="Explore practical guides, real estate insights, construction knowledge and updates from Al Harmain Associates."
-        image="/src/assets/images/blogs/blog-hero.png"
+        image={blogHeroImage}
         breadcrumb={[{ label: 'Blogs' }]}
       />
 

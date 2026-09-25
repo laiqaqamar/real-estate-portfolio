@@ -1,9 +1,44 @@
+
 // =============================================================
 // PROJECTS DATA
 // 5 Residential Projects
 // 10 Marla & 7 Marla Houses
 //
 // URL for each project: /projects/:id
+// =============================================================
+
+// =============================================================
+// PROJECT IMAGES
+// =============================================================
+
+import project1 from '../assets/images/projects/project1.jpeg'
+import project1Gallery1 from '../assets/images/projects/project1gallery1.jpeg'
+import project1Gallery2 from '../assets/images/projects/project1gallery2.jpeg'
+import project1Gallery3 from '../assets/images/projects/project1gallery3.jpeg'
+
+import project2 from '../assets/images/projects/project2.jpeg'
+import project2Gallery1 from '../assets/images/projects/project2gallery1.jpeg'
+import project2Gallery2 from '../assets/images/projects/project2gallery2.jpeg'
+import project2Gallery3 from '../assets/images/projects/project2gallery3.jpeg'
+
+import project3 from '../assets/images/projects/project 3.jpeg'
+
+import project4 from '../assets/images/projects/project4.jpeg'
+import project4Gallery1 from '../assets/images/projects/project4gallery1.jpeg'
+import project4Gallery2 from '../assets/images/projects/project4gallery2.jpeg'
+
+import project5 from '../assets/images/projects/project5.jpeg'
+import project5Gallery1 from '../assets/images/projects/project5gallery1.jpeg'
+import project5Gallery2 from '../assets/images/projects/project5gallery2.jpeg'
+import project5Gallery3 from '../assets/images/projects/project5gallery3.jpeg'
+
+import project6 from '../assets/images/projects/project6.jpeg'
+import project6Gallery1 from '../assets/images/projects/project6gallery1.jpeg'
+import project6Gallery2 from '../assets/images/projects/project6gallery2.jpeg'
+import project6Gallery3 from '../assets/images/projects/project6gallery3.jpeg'
+
+// =============================================================
+// PROJECTS
 // =============================================================
 
 export const projects = [
@@ -16,12 +51,12 @@ export const projects = [
     location: 'L Block, Gulberg Greens, Islamabad',
     status: 'Completed',
 
-    image: '/src/assets/images/projects/project1.jpeg',
+    image: project1,
 
     gallery: [
-      '/src/assets/images/projects/project1gallery1.jpeg',
-      '/src/assets/images/projects/project1gallery2.jpeg',
-      '/src/assets/images/projects/project1gallery3.jpeg',
+      project1Gallery1,
+      project1Gallery2,
+      project1Gallery3,
     ],
 
     video: null,
@@ -78,7 +113,7 @@ export const projects = [
   },
 
   // ===========================================================
-  // PROJECT 2 - 10 MARLA
+  // PROJECT 2 - 1 KANAL
   // ===========================================================
   {
     id: '1-kanal-modern-residence',
@@ -86,12 +121,12 @@ export const projects = [
     location: 'Gulberg Greens, Islamabad',
     status: 'Completed',
 
-    image: '/src/assets/images/projects/project2.jpeg',
+    image: project2,
 
     gallery: [
-      '/src/assets/images/projects/project2gallery1.jpeg',
-      '/src/assets/images/projects/project2gallery2.jpeg',
-      '/src/assets/images/projects/project2gallery3.jpeg',
+      project2Gallery1,
+      project2Gallery2,
+      project2Gallery3,
     ],
 
     video: null,
@@ -156,12 +191,12 @@ export const projects = [
     location: 'Gulberg Greens, Islamabad',
     status: 'completed',
 
-    image: '/src/assets/images/projects/project 3.jpeg',
+    image: project3,
 
     gallery: [
-      '/src/assets/images/projects/project1gallery1.jpeg',
-      '/src/assets/images/projects/project1gallery2.jpeg',
-      '/src/assets/images/projects/project1gallery3.jpeg',
+      project1Gallery1,
+      project1Gallery2,
+      project1Gallery3,
     ],
 
     video: null,
@@ -170,7 +205,7 @@ export const projects = [
       'A completed 10 Marla family home combining functional spaces, modern architecture and comfortable residential living.',
 
     description:
-      'This  10 Marla family house focuses on practical space planning and a modern residential lifestyle. The proposed design includes spacious family areas, well-sized bedrooms, a contemporary kitchen and a welcoming front elevation.',
+      'This 10 Marla family house focuses on practical space planning and a modern residential lifestyle. The proposed design includes spacious family areas, well-sized bedrooms, a contemporary kitchen and a welcoming front elevation.',
 
     features: [
       'Modern architectural design',
@@ -226,12 +261,12 @@ export const projects = [
     location: 'Gulberg Greens, Islamabad',
     status: 'Under Construction',
 
-    image: '/src/assets/images/projects/project4.jpeg',
+    image: project4,
 
+    // Only the two gallery images that actually exist
     gallery: [
-      '/src/assets/images/projects/project4gallery1.jpeg',
-      '/src/assets/images/projects/project4gallery2.jpeg',
-      '/src/assets/images/projects/project4gallery3.jpeg',
+      project4Gallery1,
+      project4Gallery2,
     ],
 
     video: null,
@@ -296,12 +331,12 @@ export const projects = [
     location: 'Gulberg Greens, Islamabad',
     status: 'Completed',
 
-    image: '/src/assets/images/projects/project5.jpeg',
+    image: project5,
 
     gallery: [
-      '/src/assets/images/projects/project5gallery1.jpeg',
-      '/src/assets/images/projects/project5gallery2.jpeg',
-      '/src/assets/images/projects/project5gallery3.jpeg',
+      project5Gallery1,
+      project5Gallery2,
+      project5Gallery3,
     ],
 
     video: null,
@@ -356,18 +391,22 @@ export const projects = [
       },
     ],
   },
-   {
+
+  // ===========================================================
+  // PROJECT 6 - 1 KANAL
+  // ===========================================================
+  {
     id: '1-kanal-family-house',
     name: '1 kanal luxury House',
     location: 'Gulberg Greens, Islamabad',
     status: 'Planned',
 
-    image: '/src/assets/images/projects/project6.jpeg',
+    image: project6,
 
     gallery: [
-      '/src/assets/images/projects/project6gallery1.jpeg',
-      '/src/assets/images/projects/project6gallery2.jpeg',
-      '/src/assets/images/projects/project6gallery3.jpeg',
+      project6Gallery1,
+      project6Gallery2,
+      project6Gallery3,
     ],
 
     video: null,
@@ -430,3 +469,5 @@ export const projects = [
 
 export const getProjectById = (id) =>
   projects.find((project) => project.id === id)
+
+

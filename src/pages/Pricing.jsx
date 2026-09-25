@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Calculator, Info } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import Button from '../components/Button'
+import architectureHeroImage from '../assets/images/services/architecture-hero-image.jpg'
 import {
   projectTypes,
   constructionTypes,
@@ -43,7 +44,7 @@ export default function Pricing() {
         eyebrow="Pricing"
         title="Construction Cost Calculator"
         description="Get a quick, approximate estimate for your construction project."
-        image="/src/assets/images/services/architecture-hero-image.jpg"
+        image={architectureHeroImage}
         breadcrumb={[{ label: 'Pricing' }]}
       />
 
