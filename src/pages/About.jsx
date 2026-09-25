@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   Sparkles,
 } from 'lucide-react'
-
+import blockHeroImage from '../assets/images/blocks/block-hero-image.webp'
 import aboutCover from '../assets/images/hero-back-image.png'
 import ceoImage from '../assets/images/ceo.jpeg'
 import PageHeader from '../components/PageHeader'
@@ -559,7 +559,7 @@ src={aboutOffice}
               <div className="overflow-hidden">
 
                 <SmartImage
-                  src="/src/assets/images/blocks/block-hero-image.webp"
+                 src={blockHeroImage}
                   alt="Gulberg Greens Islamabad"
                   className="h-[400px] w-full object-cover opacity-90 transition duration-700 hover:scale-105"
                 />
