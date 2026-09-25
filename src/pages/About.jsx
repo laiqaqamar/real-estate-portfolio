@@ -12,11 +12,11 @@ import {
 } from 'lucide-react'
 
 import aboutCover from '../assets/images/hero-back-image.png'
-
+import ceoImage from '../assets/images/ceo.jpeg'
 import PageHeader from '../components/PageHeader'
 import SmartImage from '../components/SmartImage'
 import Button from '../components/Button'
-
+import aboutOffice from '../assets/images/about-office.png'
 import { siteInfo, howWeWork } from '../data/siteData'
 
 const fadeUp = {
@@ -114,7 +114,7 @@ export default function About() {
               <div className="relative overflow-hidden">
 
                 <SmartImage
-                  src="/src/assets/images/about-office.png"
+src={aboutOffice}
                   alt="Al Harmain Associates"
                   className="h-[460px] w-full object-cover sm:h-[560px]"
                 />
@@ -412,7 +412,7 @@ export default function About() {
 
                 <div className="relative overflow-hidden">
                   <img
-                    src="/src/assets/images/ceo.jpeg"
+                    src={ceoImage}
                     alt={siteInfo.ceo}
                     className="h-[500px] w-full object-cover object-center"
                   />
